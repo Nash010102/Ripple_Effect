@@ -77,7 +77,7 @@ const DAILY_MESSAGES = [
 
 const CHAINS = [
   {
-    start: "When you love me…",
+    start: "When you Sayang me…",
     steps: [
       "I feel supported",
       "I stop doubting myself as much",
