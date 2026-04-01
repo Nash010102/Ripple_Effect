@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>The Ripple of You</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <!-- Floating particles -->
+  <div id="particles" aria-hidden="true"></div>
+
+  <!-- Ambient background blobs -->
+  <div class="ambient-blob blob-1" aria-hidden="true"></div>
+  <div class="ambient-blob blob-2" aria-hidden="true"></div>
+  <div class="ambient-blob blob-3" aria-hidden="true"></div>
+
+  <!-- ===== INTRO SCREEN ===== -->
+  <div id="intro">
+    <div class="intro-content">
+      <div class="intro-heart">💖</div>
+      <div class="intro-text">
+        <p class="greeting">Hi my mochi…</p>
+        <p class="msg">I don't think you fully understand<br>what you've become in my life.</p>
+        <p class="msg">So I made this to show you — not just how much I love you,<br>but what my life feels like because you're in it.</p>
+      </div>
+      <button id="enter-btn">Enter My Heart 💗</button>
+    </div>
+  </div>
+
+  <!-- ===== MODE TOGGLE (outside main so filter doesn't affect it) ===== -->
+  <div id="mode-toggle-container">
+    <span id="toggle-label">With You 💖</span>
+    <label class="toggle-switch">
+      <input type="checkbox" id="without-toggle">
+      <span class="toggle-slider"></span>
+    </label>
+  </div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <div id="main">
+
+    <!-- Section: Ripple Map -->
+    <section class="section" id="sec-ripple">
+      <h2 class="sec-title fade-in">The Ripple of You</h2>
+      <p class="sec-sub fade-in">Tap on Mochi to watch the ripples spread 💗</p>
+      <div id="ripple-map">
+        <svg id="svg-lines"></svg>
+        <div id="center-orb">
+          <div class="orb-glow"></div>
+          <div class="orb-face">
+            <span class="orb-emoji">💗</span>
+            <span class="orb-name">Mochi</span>
+          </div>
+          <div class="pulse-ring pr-1"></div>
+          <div class="pulse-ring pr-2"></div>
+          <div class="pulse-ring pr-3"></div>
+        </div>
+        <div id="satellite-nodes"></div>
+      </div>
+      <div class="scroll-hint" id="scroll-hint">
+        <span>Scroll to explore more 💖</span>
+        <span class="arrow-down">↓</span>
+      </div>
+    </section>
+
+    <!-- Section: Today's Impact -->
+    <section class="section" id="sec-daily">
+      <h2 class="sec-title fade-in">🌤 Today You Did This To Me</h2>
+      <div class="daily-carousel">
+        <div class="daily-card glass">
+          <p id="daily-text"></p>
+        </div>
+        <div class="daily-controls">
+          <button class="ctrl-btn" id="prev-daily" aria-label="Previous">‹</button>
+          <div id="daily-dots" class="dots"></div>
+          <button class="ctrl-btn" id="next-daily" aria-label="Next">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Ripple Chain -->
+    <section class="section" id="sec-chain">
+      <h2 class="sec-title fade-in">🌊 The Ripple Effect</h2>
+      <p class="sec-sub fade-in">Tap to see how your love cascades through my life</p>
+      <div class="chain-selector">
+        <button class="chain-tab active" data-chain="0">When you love me…</button>
+        <button class="chain-tab" data-chain="1">You listen to me…</button>
+      </div>
+      <div id="chain-track"></div>
+    </section>
+
+    <!-- Section: With You / Without You -->
+    <section class="section" id="sec-contrast">
+      <div id="with-content" class="contrast-panel">
+        <h2 class="sec-title fade-in">💖 Because You're Here</h2>
+        <div id="with-list" class="contrast-list"></div>
+        <p class="contrast-end fade-in">Thank goodness you exist. 💖</p>
+      </div>
+      <div id="without-content" class="contrast-panel hidden">
+        <h2 class="sec-title fade-in">🖤 If You Weren't Here</h2>
+        <div id="without-list" class="contrast-list"></div>
+        <p class="contrast-end muted fade-in">I'd be okay… but I wouldn't be <em>me</em>.</p>
+      </div>
+    </section>
+
+    <!-- Section: Thank You -->
+    <section class="section" id="sec-thanks">
+      <h2 class="sec-title fade-in">💖 Thank You, Mochi</h2>
+      <p class="sec-sub fade-in">For everything you are and everything you do</p>
+      <div id="thanks-grid" class="thanks-grid"></div>
+    </section>
+
+    <!-- Section: Good Night -->
+    <section class="section" id="sec-night">
+      <div class="night-wrap">
+        <div class="moon-icon">🌙</div>
+        <h2 class="night-title fade-in">Good Night, My Mochi</h2>
+        <p class="night-msg fade-in">
+          If you're reading this before sleeping…<br>
+          just know you were the best part of my day.
+        </p>
+        <p class="night-msg fade-in">
+          No matter how tiring things get,<br>
+          ending the day with you makes it worth it.
+        </p>
+        <div class="night-hearts">💖 💖 💖</div>
+        <p class="night-sig fade-in">— Your person, always 💗</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="love-footer">
+      Made with all my love, just for you, Mochi girl 💗
+    </footer>
+  </div>
+
+  <!-- Node detail popup (outside #main so CSS filter doesn't break position:fixed) -->
+  <div id="node-popup" class="popup hidden">
+    <button class="popup-close" id="popup-close" aria-label="Close">✕</button>
+    <div id="popup-body"></div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
